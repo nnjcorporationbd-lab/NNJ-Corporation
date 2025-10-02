@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NNJ Corporation — Products</title>
+<style>
+  :root{--accent:#0073aa;--muted:#657786;--bg:#f5f7fa}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#222}
+  .container{max-width:1100px;margin:0 auto;padding:20px}
+  header{background:linear-gradient(90deg,var(--accent),#005f8a);color:#fff;padding:18px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:56px;height:56px;border-radius:8px;background:#fff;padding:6px}
+  nav{margin-left:auto}
+  nav a{color:#fff;margin-left:14px;text-decoration:none;font-weight:600}
+  .hero{display:flex;gap:20px;align-items:center;padding:20px 0}
+  .hero h1{margin:0;font-size:24px}
+  .card{background:#fff;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+  .searchRow{display:flex;gap:8px;margin-bottom:12px}
+  input[type="search"]{flex:1;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+  button.primary{background:var(--accent);color:#fff;border:none;padding:9px 12px;border-radius:8px;cursor:pointer;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+  .product{background:#fff;padding:12px;border-radius:10px;border:1px solid #eef2f6}
+  .product h3{margin:0 0 8px;font-size:16px}
+  .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+  .small{font-size:13px;color:#333}
+  .spec-table{width:100%;border-collapse:collapse;margin-top:8px}
+  .spec-table th,.spec-table td{border:1px solid #eee;padding:6px;font-size:13px;text-align:left}
+  footer{padding:18px 0;color:var(--muted);font-size:14px;text-align:center;margin-top:20px}
+  @media(max-width:800px){ .hero{flex-direction:column;align-items:flex-start} }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <img id="logo" src="https://via.placeholder.com/120x120.png?text=NNJ" alt="logo">
+        <div>
+          <div id="companyName" style="font-weight:800;letter-spacing:.2px">NNJ Corporation</div>
+          <div id="companyTag" style="font-size:13px;opacity:.95">CPVC Pipe Fittings & Plumbing Solutions</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#certs">Certifications</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 id="heroTitle">High-quality CPVC Pipes & Fittings</h1>
+        <p id="heroSubtitle" style="color:var(--muted);margin:8px 0 12px">Reliable plumbing solutions for residential, commercial and industrial projects.</p>
+        <div style="display:flex;gap:8px">
+          <button class="primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Explore Products</button>
+          <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Quote</button>
+        </div>
+      </div>
+      <div style="margin-left:auto;min-width:280px" class="card">
+        <div style="font-weight:700;margin-bottom:8px">Search Products</div>
+        <div class="searchRow">
+          <input id="searchInput" type="search" placeholder="Search by name, category, feature...">
+          <button class="primary" onclick="applyFilter()">Search</button>
+        </div>
+        <div style="color:var(--muted);font-size:13px">Showing <span id="count">0</span> products</div>
+      </div>
+    </section>
+
+    <section id="products" style="margin-top:18px">
+      <h2>Our Products</h2>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section id="certs" style="margin-top:22px">
+      <h2>Certifications & Approvals</h2>
+      <div id="certWrap" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px"></div>
+    </section>
+
+    <section id="clients" style="margin-top:22px">
+      <h2>Selected Clients</h2>
+      <div id="clientsWrap" class="card" style="margin-top:10px"></div>
+    </section>
+
+    <section id="contact" style="margin-top:22px">
+      <h2>Contact & Company Info</h2>
+      <div class="card" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px">
+        <div style="flex:1;min-width:240px">
+          <div><strong id="companyTitle">NNJ Corporation</strong></div>
+          <div style="color:var(--muted);margin-top:8px" id="companyInfo"></div>
+          <div style="margin-top:10px">
+            <strong>Phones</strong>
+            <div id="phones" style="color:var(--muted)"></div>
+            <strong style="display:block;margin-top:8px">Email</strong>
+            <div id="email" style="color:var(--muted)"></div>
+            <strong style="display:block;margin-top:8px">Address</strong>
+            <div id="address" style="color:var(--muted)"></div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:260px">
+          <strong>Get a Quote</strong>
+          <form id="quoteForm" style="margin-top:8px">
+            <input name="name" placeholder="Your name" style="width:100%;padding:8px;margin-bottom:8px;border-radius:6px;border:1px solid #e6e9ef">
+            <input name="phone" placeholder="Phone" style="width:100%;padding:8px;margin-bottom:8px;border-radius:6px;border:1px solid #e6e9ef">
+            <input name="email" placeholder="Email" style="width:100%;padding:8px;margin-bottom:8px;border-radius:6px;border:1px solid #e6e9ef">
+            <textarea name="msg" placeholder="Project details" style="width:100%;padding:8px;border-radius:6px;border:1px solid #e6e9ef"></textarea>
+            <div style="margin-top:8px"><button type="submit" class="primary">Send Request</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="text-align:center;color:var(--muted);padding:18px 0">© <span id="footerName">NNJ Corporation</span> — All rights reserved.</div>
+    </footer>
+  </main>
+
+<script>
+(async function(){
+  const DATA_FILE = './nnj-corporation-crm-data.json';
+  let resp, data;
+  try {
+    resp = await fetch(DATA_FILE);
+    if(!resp.ok) throw new Error('JSON not found: ' + resp.status);
+    data = await resp.json();
+  } catch(err) {
+    document.getElementById('grid').innerHTML = '<div style="color:red">Could not load data file. Make sure nnj-corporation-crm-data.json is uploaded to repo root.</div>';
+    console.error(err);
+    return;
+  }
+  const company = data.company || {};
+  document.getElementById('companyName').textContent = company.name || 'NNJ Corporation';
+  document.getElementById('companyTitle').textContent = company.name || '';
+  document.getElementById('footerName').textContent = company.name || '';
+  document.getElementById('heroTitle').textContent = (company.tagline) ? company.tagline : 'High-quality CPVC Pipes & Fittings';
+  document.getElementById('companyInfo').innerHTML = `
+    <div>Established: ${company.established || '-'}</div>
+    <div>Experience: ${company.experience || '-'}</div>
+    <div>Countries Approved: ${company.countries_approved || '-'}</div>
+  `;
+  if(company.contact){
+    document.getElementById('email').textContent = company.contact.email || '';
+    document.getElementById('address').textContent = company.contact.address || '';
+    const phonesEl = document.getElementById('phones');
+    phonesEl.innerHTML = '';
+    (company.contact.phones || []).forEach(p=>{
+      const d = document.createElement('div'); d.textContent = p; phonesEl.appendChild(d);
+    });
+  }
+  const products = data.products || [];
+  const grid = document.getElementById('grid');
+  function renderProducts(list){
+    grid.innerHTML = '';
+    list.forEach(prod=>{
+      const card = document.createElement('div'); card.className='product';
+      let specsHtml = '';
+      if(Array.isArray(prod.specifications) && prod.specifications.length){
+        specsHtml += '<table class="spec-table"><thead><tr>';
+        const keys = Object.keys(prod.specifications[0]);
+        keys.forEach(k=> specsHtml += `<th>${escapeHtml(k)}</th>`);
+        specsHtml += '</tr></thead><tbody>';
+        prod.specifications.forEach(s=>{
+          specsHtml += '<tr>';
+          keys.forEach(k=> specsHtml += `<td>${escapeHtml(s[k]??'')}</td>`);
+          specsHtml += '</tr>';
+        });
+        specsHtml += '</tbody></table>';
+      } else if (prod.Specifications) {
+        specsHtml = `<div class="small"><strong>Specs:</strong> ${escapeHtml(prod.Specifications)}</div>`;
+      }
+      const featuresHtml = Array.isArray(prod.features) ? `<div style="margin-top:8px"><strong>Features:</strong><ul>${prod.features.map(f=>`<li>${escapeHtml(f)}</li>`).join('')}</ul></div>` : '';
+      const appsHtml = Array.isArray(prod.applications) ? `<div style="margin-top:8px"><strong>Applications:</strong> ${escapeHtml(prod.applications.join(', '))}</div>` : '';
+      card.innerHTML = `
+        <h3>${escapeHtml(prod.name || prod['Product Name'] || '')}</h3>
+        <div class="meta">${escapeHtml(prod.category || prod.Category || '')}</div>
+        <div class="small">${escapeHtml(prod.description || prod.Description || '')}</div>
+        ${featuresHtml}
+        ${appsHtml}
+        ${specsHtml}
+      `;
+      grid.appendChild(card);
+    });
+    document.getElementById('count').textContent = list.length;
+  }
+  renderProducts(products);
+  const certWrap = document.getElementById('certWrap');
+  (data.certifications || []).forEach(c=>{
+    const el = document.createElement('div'); el.className='card'; el.style.minWidth='220px';
+    el.innerHTML = `<strong>${escapeHtml(c.name||c.name)}</strong><div style="color:var(--muted);font-size:13px">${escapeHtml((c.type||c.status||'') + (c.since?(' • since '+c.since):''))}</div><div style="font-size:13px;margin-top:6px">${escapeHtml(c.scope||c.country||'')}</div>`;
+    certWrap.appendChild(el);
+  });
+  const clientsWrap = document.getElementById('clientsWrap');
+  clientsWrap.innerHTML = (data.clients && Array.isArray(data.clients)) ? data.clients.map(c=>`<span style="display:inline-block;background:#f1f5f9;padding:6px 8px;margin:4px;border-radius:6px;">${escapeHtml(c)}</span>`).join('') : '';
+  window.applyFilter = function(){
+    const q = (document.getElementById('searchInput').value||'').toLowerCase().trim();
+    if(!q){ renderProducts(products); return; }
+    const out = products.filter(p => JSON.stringify(p).toLowerCase().includes(q));
+    renderProducts(out);
+  };
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Form ready (demo). To enable submissions, set a webhook URL in the code.');
+    e.target.reset();
+  });
+  function escapeHtml(s){ if(s===null||s===undefined) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+})();
+</script>
+</body>
+</html>
