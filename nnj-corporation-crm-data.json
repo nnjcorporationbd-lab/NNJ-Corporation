@@ -1,0 +1,285 @@
+{
+  "company": {
+    "name": "NNJ Corporation",
+    "established": "2005",
+    "experience": "18+ Years",
+    "countries_approved": "50+",
+    "clients": "100+",
+    "client_satisfaction": "95%",
+    "contact": {
+      "phones": [
+        "+8801912 627 780",
+        "+8801845-397 435"
+      ],
+      "email": "nnjcorporation@gmail.com",
+      "address": "1/1 Rupayun Taj, Room No: 28, Culvert Road, Bijoynagar, Dhaka",
+      "business_hours": {
+        "weekdays": "Sunday - Thursday: 9:00 AM - 6:00 PM",
+        "friday": "Friday: 9:00 AM - 1:00 PM",
+        "saturday": "Saturday: Closed"
+      }
+    }
+  },
+  "products": [
+    {
+      "name": "CPVC Schedule 40 Pipes",
+      "category": "Standard Pressure",
+      "description": "Engineered for reliable performance in standard pressure hot and cold water distribution systems",
+      "features": [
+        "Hot & Cold Water",
+        "Chemical Resistant",
+        "Potable Water Safe",
+        "Easy Installation",
+        "Corrosion Resistance",
+        "Smooth Interior Surface"
+      ],
+      "applications": [
+        "Residential",
+        "Commercial",
+        "Industrial"
+      ],
+      "specifications": [
+        {
+          "size": "1/4\"",
+          "od": "0.540",
+          "id": "0.344",
+          "wall": "0.088",
+          "psi": "780"
+        },
+        {
+          "size": "3/8\"",
+          "od": "0.675",
+          "id": "0.473",
+          "wall": "0.091",
+          "psi": "620"
+        },
+        {
+          "size": "1/2\"",
+          "od": "0.840",
+          "id": "0.602",
+          "wall": "0.109",
+          "psi": "600"
+        },
+        {
+          "size": "3/4\"",
+          "od": "1.050",
+          "id": "0.804",
+          "wall": "0.113",
+          "psi": "480"
+        },
+        {
+          "size": "1\"",
+          "od": "1.315",
+          "id": "1.029",
+          "wall": "0.133",
+          "psi": "450"
+        },
+        {
+          "size": "2\"",
+          "od": "2.375",
+          "id": "2.047",
+          "wall": "0.154",
+          "psi": "280"
+        }
+      ]
+    },
+    {
+      "name": "CPVC Schedule 80 Pipes",
+      "category": "High Pressure",
+      "description": "Premium pipes for high-pressure systems with enhanced durability and strength",
+      "features": [
+        "High Pressure Rating",
+        "Enhanced Durability",
+        "Temperature Resistant",
+        "Corrosion Free",
+        "Thicker Walls",
+        "Superior Mechanical Strength"
+      ],
+      "applications": [
+        "Industrial",
+        "Commercial",
+        "High-rise Buildings",
+        "Critical Applications"
+      ],
+      "specifications": [
+        {
+          "size": "1/4\"",
+          "od": "0.540",
+          "id": "0.282",
+          "wall": "0.119",
+          "psi": "1130"
+        },
+        {
+          "size": "3/8\"",
+          "od": "0.675",
+          "id": "0.403",
+          "wall": "0.126",
+          "psi": "920"
+        },
+        {
+          "size": "1/2\"",
+          "od": "0.840",
+          "id": "0.526",
+          "wall": "0.147",
+          "psi": "850"
+        },
+        {
+          "size": "3/4\"",
+          "od": "1.050",
+          "id": "0.722",
+          "wall": "0.154",
+          "psi": "690"
+        },
+        {
+          "size": "1\"",
+          "od": "1.315",
+          "id": "0.936",
+          "wall": "0.179",
+          "psi": "630"
+        },
+        {
+          "size": "2\"",
+          "od": "2.375",
+          "id": "1.913",
+          "wall": "0.218",
+          "psi": "400"
+        }
+      ]
+    },
+    {
+      "name": "PP-R Products",
+      "category": "Advanced Solutions",
+      "description": "Cutting-edge solution for modern plumbing systems with excellent heat resistance",
+      "features": [
+        "Superior Heat Resistance",
+        "Chemical Stability",
+        "Smooth Inner Surface",
+        "Lightweight Installation",
+        "Fusion Welding",
+        "Eco-Friendly"
+      ],
+      "applications": [
+        "Hot Water Systems",
+        "Heating Systems",
+        "Industrial Applications",
+        "Commercial Buildings"
+      ],
+      "fittings": [
+        "Couplings",
+        "Elbows (90° and 45°)",
+        "Tees (Equal and Reducing)",
+        "Reducers",
+        "End Caps",
+        "Valves",
+        "Adapters"
+      ]
+    },
+    {
+      "name": "uPVC Products",
+      "category": "Versatile Solutions",
+      "description": "Versatile, durable, and cost-effective solution for various plumbing applications",
+      "features": [
+        "Excellent Chemical Resistance",
+        "High Rigidity",
+        "Corrosion-Free",
+        "Cost-Effective",
+        "UV Resistance",
+        "Smooth Bore"
+      ],
+      "applications": [
+        "Cold Water Supply",
+        "Drainage",
+        "Waste Systems",
+        "DWV Systems"
+      ],
+      "fittings": [
+        "Elbows (45° and 90°)",
+        "Tees (Equal and Reducing)",
+        "Couplings",
+        "Reducers",
+        "End Caps",
+        "Unions",
+        "Adapters"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ERA Sanitary",
+      "type": "Certificate of Authorization",
+      "since": "1993",
+      "scope": "CPVC ASTM D2846 pipes, valves and fittings"
+    },
+    {
+      "name": "IAPMO",
+      "type": "Certificate of Listing",
+      "status": "Current",
+      "scope": "International Association of Plumbing and Mechanical Officials certification"
+    },
+    {
+      "name": "IQNet",
+      "type": "International Certificate",
+      "status": "Current",
+      "scope": "Global quality management system certification"
+    },
+    {
+      "name": "WRAS",
+      "country": "United Kingdom",
+      "scope": "Water Regulations Advisory Scheme"
+    },
+    {
+      "name": "NSF",
+      "scope": "National Sanitation Foundation - International public health and safety standards"
+    },
+    {
+      "name": "CE",
+      "country": "European Union",
+      "scope": "Conformité Européenne - European conformity marking"
+    },
+    {
+      "name": "ASTM D2846",
+      "country": "United States",
+      "scope": "Standard specification for chlorinated poly(vinyl chloride) plastic pipe"
+    }
+  ],
+  "global_approvals": [
+    "United States",
+    "Canada",
+    "United Kingdom",
+    "Germany",
+    "France",
+    "China",
+    "India",
+    "Bangladesh",
+    "UAE",
+    "Saudi Arabia",
+    "Australia",
+    "New Zealand",
+    "Singapore",
+    "Malaysia",
+    "Thailand"
+  ],
+  "quality_assurance": [
+    "Independent Laboratory Testing",
+    "50+ Years Track Record",
+    "Potable Water Approved",
+    "International Standards Compliance"
+  ],
+  "clients": [
+    "JCX",
+    "Aman Mohammad Land Development Ltd.",
+    "JBS Housing Ltd.",
+    "Building for Real Estate Ltd.",
+    "MAX Group",
+    "Ambit Builders Ltd.",
+    "Esquire Apartments Limited",
+    "BARAKAH HOUSING",
+    "Credence",
+    "DBL",
+    "LABAID PROPERTIES LIMITED",
+    "MHM Properties",
+    "Sign Media",
+    "Concord",
+    "INTEC Properties Limited"
+  ]
+}
