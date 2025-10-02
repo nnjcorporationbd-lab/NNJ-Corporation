@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NNJ Corporation — Products</title>
+</head>
+<body>
+<h1>NNJ Corporation</h1>
+<p>This is a demo site. Data loads from nnj-corporation-crm-data.json</p>
+<script>
+(async function(){
+  const DATA_FILE = './nnj-corporation-crm-data.json';
+  let resp = await fetch(DATA_FILE);
+  let data = await resp.json();
+  document.body.insertAdjacentHTML('beforeend', '<pre>'+JSON.stringify(data,null,2)+'</pre>');
+})();
+</script>
+</body>
+</html>
