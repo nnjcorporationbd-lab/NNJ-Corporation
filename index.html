@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>NNJ Corporation — Products</title>
+  <style>
+    :root{--accent:#0073aa;--muted:#657786;--bg:#f5f7fa}
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#222}
+    header{background:linear-gradient(90deg,var(--accent),#005f8a);color:#fff;padding:18px}
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:56px;height:56px;border-radius:8px;background:#fff;padding:6px}
+    nav{margin-left:auto}
+    nav a{color:#fff;margin-left:14px;text-decoration:none;font-weight:600}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:14px}
+    .product{background:#fff;padding:12px;border-radius:10px;border:1px solid #eef2f6;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+    .product img{max-width:100%;height:160px;object-fit:contain;margin-bottom:8px}
+    .product h3{margin:0;font-size:16px}
+    .meta{color:var(--muted);font-size:13px;margin:4px 0}
+    .price{color:green;font-weight:bold;margin-top:6px}
+    button.cart{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;margin-top:8px}
+    footer{padding:18px 0;color:var(--muted);font-size:14px;text-align:center;margin-top:20px}
+    h2{margin-top:24px}
+    .clients img{height:50px;margin:10px}
+    .certs div{background:#fff;padding:10px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);margin:6px}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container" style="display:flex;align-items:center">
+    <div class="brand">
+      <img src="images/logo.png" alt="logo">
+      <div>
+        <div style="font-weight:800;letter-spacing:.2px">NNJ Corporation</div>
+        <div style="font-size:13px;opacity:.95">CPVC & PPR Products Supplier</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#clients">Clients</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="products">
+    <h2>Our Products</h2>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <section id="clients">
+    <h2>Our Clients</h2>
+    <div id="clientsWrap" class="clients"></div>
+  </section>
+
+  <section id="certs">
+    <h2>Certifications</h2>
+    <div id="certWrap" class="certs" style="display:flex;flex-wrap:wrap"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Company Info</h2>
+    <div>Email: info@nnjcorp.com</div>
+    <div>Phone: +8801XXXXXXXXX</div>
+    <div>Address: Dhaka, Bangladesh</div>
+  </section>
+</main>
+
+<footer>
+  © NNJ Corporation — All rights reserved.
+</footer>
+
+<script>
+(async function(){
+  const resp = await fetch('./nnj-corporation-crm-data.json');
+  const data = await resp.json();
+
+  // Products
+  const products = data.products || [];
+  const grid = document.getElementById('grid');
+  products.forEach(prod => {
+    const card = document.createElement('div'); card.className='product';
+    card.innerHTML = `
+      <img src="${prod.image}" alt="${prod.name}">
+      <h3>${prod.name}</h3>
+      <div class="meta">${prod.category}</div>
+      <div>${prod.description}</div>
+      <div class="price">${prod.price}</div>
+      <button class="cart">Add to Cart</button>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Clients
+  const clients = data.clients || [];
+  const clientsWrap = document.getElementById('clientsWrap');
+  clients.forEach((c,i) => {
+    const img = document.createElement('img');
+    img.src = `images/client${i+1}.png`;
+    img.alt = c;
+    clientsWrap.appendChild(img);
+  });
+
+  // Certifications
+  const certs = data.certifications || [];
+  const certWrap = document.getElementById('certWrap');
+  certs.forEach(c => {
+    const div = document.createElement('div');
+    div.innerHTML = `<strong>${c.name}</strong><br>${c.type||c.country||''}`;
+    certWrap.appendChild(div);
+  });
+
+})();
+</script>
+
+</body>
+</html>
